@@ -31,5 +31,12 @@ public class Users {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public Integer getUid() {
+		return uid;
+	}
+	public void setUid(Integer uid) {
+		this.uid = uid;
+	}
+	
 	
 }

@@ -1,6 +1,8 @@
 package org.meeting.pro.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
@@ -17,11 +19,23 @@ public class Rooms {
 	@GeneratedValue(generator = "r_id_generator")
 	String r_id;
 	String roomname;
-	String floor;
+	Integer floor;
 	String roomno;
 	String capacity;
+	boolean haswhiteboard;
 	boolean hasprojector;
+	
+	@Enumerated(EnumType.STRING)
 	type roomtype;
+	
+	
+	public boolean isHaswhiteboard() {
+		return haswhiteboard;
+	}
+	public void setHaswhiteboard(boolean haswhiteboard) {
+		this.haswhiteboard = haswhiteboard;
+	}
+	
 	public type getRoomtype() {
 		return roomtype;
 	}
@@ -40,10 +54,10 @@ public class Rooms {
 	public void setRoomname(String roomname) {
 		this.roomname = roomname;
 	}
-	public String getFloor() {
+	public Integer getFloor() {
 		return floor;
 	}
-	public void setFloor(String floor) {
+	public void setFloor(Integer floor) {
 		this.floor = floor;
 	}
 	public String getRoomno() {
